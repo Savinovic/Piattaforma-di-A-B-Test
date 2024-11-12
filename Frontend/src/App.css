@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Sfondo dinamico con gradiente */
+body {
+  background: linear-gradient(135deg, #455361, #000000);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  color: white;
+  font-family: 'Poppins',Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* Animazione del gradiente */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Stile della lista di film */
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; /* Centra le card */
+  background-color: transparent;
+}
+
+.movie-list h2{
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Stile della singola card */
+.movie-item {
+  display: flex;
+  flex-direction: row;
+  min-width: 200px;
+  max-width: 400px;
+  height: 400px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 12px; /* Arrotondamento più morbido */
+  padding: 15px;
+  background-color: rgba(186 241 232 / 80%); /* Sfondo semi-trasparente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s, max-width 1.3s;
+  justify-content: center;
+}
+
+.movie-left p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.movie-left{
+  width: 80%;
+  display: grid;
+  grid-template-rows: 70px 245px 35px;
+}
+
+.movie-left h2{
+  font-size: 100%;
+}
+
+.movie-right{
+  align-content: center;
+  padding: 12px;
+  width: 70%;
+  text-align: -webkit-left;
+  color: #4a464f;
+  font-family: 'Poppins';
+  overflow-y: scroll;
+  overflow-x: clip;
+  
+}
+
+
+
+.movie-item:hover {
+  transform: scale(1.00); /* Maggiore effetto di ingrandimento */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ombra più marcata */
+}
+
+
+
+
+
+img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  justify-self: center;
+}
+
+.movie-item:hover img {
+  transform: scale(1.00); /* Effetto zoom sull'immagine al passaggio del mouse */
+}
+
+/* Contenitore della modalità di scorrimento */
+.movie-container {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3); /* Sfondo semi-trasparente */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: auto;
+  height: 480px;
+}
+
+
+/* Stile dei pulsanti */
+button {
+  margin: 0 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF5722; /* Colore arancione brillante */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-form button {
+  font-size: x-large;
+}
+
+button:hover {
+  background-color: #FF784E; /* Colore leggermente più chiaro al passaggio del mouse */
+  transform: translateY(-2px); /* Leggera spinta verso l'alto */
+}
+
+button:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.toggle-button-container {
+  display: flex; /* Usa flexbox per l'allineamento */
+  justify-content: center; /* Centra orizzontalmente */
+  margin: 20px 0; /* Spaziatura verticale */
+  position: sticky;
+  top: 70px;
+  z-index: 2
+}
+
+button.toggle-view {
+  margin: 0;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF5722;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button.toggle-view:hover {
+  background-color: #FF784E;
+  transform: translateY(-2px);
+}
+
+
+
+
+/* Pulsanti di navigazione */
+.navigation-buttons {
+  margin-top: 15px;
+}
+
+/* Titolo della pagina */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+h2{
+  color:orangered
+}
+
+h3 {
+  font-size: xxx-large;
+}
+
+.genre-section h3{
+  font-family: fantasy;
+  color: maroon;
+}
+
+/* Testo di errore */
+p {
+  font-size: 1.2rem;
+  color: red;
+  text-align: center;
+}
+
+/* Effetto di transizione al cambio modalità */
+.movie-list, .movie-container {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/*LOGIN */
+
+.login-container {
+  padding: 40px;
+  max-width: 400px;
+  animation: fadeIn 1s forwards;
+  display: flex;
+  justify-content: center;
+  margin: calc(50vh - 310px) auto;
+}
+
+/* Animazione di fade-in */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Stile del form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Stile per l'intestazione */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 5px rgb(230 0 0 / 50%);
+  position: sticky;
+  border-radius: 30px;
+  top: 10px;
+  z-index: 2;
+  background-color: #ff784e52;
+  backdrop-filter: blur(10px)
+}
+
+@media (min-width: 768px) {
+  /* Stili per schermi piccoli (come smartphone) */
+  h1 {
+    justify-self: center; 
+    width: 40%;
+    position: unset;
+  }
+
+  .toggle-button-container{
+    position: unset;
+  }
+
+  .login-container {
+    background-color: rgba(255, 255, 255, 0.2); /* Sfondo semi-trasparente */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    animation: fadeIn 1s forwards;
+    position: relative;
+    margin: calc(50vh - 260px) auto;
+  }
+
+  .login-form{
+    gap: 20px;
+  }
+}
+
+
+/* Stile degli input */
+
+
+input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+
+/*GENERI*/
+
+.genres-container {
+  background-color: #FFD700;
+  padding: 20px 0;
+  border-radius: 50px;
+}
+
+.genre-section {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.movie-row {
+  display: flex;
+  overflow-x: auto;  /* Abilita lo scorrimento orizzontale */
+  padding: 20px 20px;
+  gap: 13px;
+  background-color: maroon;
+  border-radius: 30px;
+  margin: 0 20px;
+}
+
+.star-vote {
+  margin-top: 12px;
+}
+
+.movie-row::-webkit-scrollbar {
+  height: 8px; /* Altezza della scrollbar */
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+  background: #888; /* Colore della scrollbar */
+  border-radius: 10px; /* Bordo arrotondato della scrollbar */
+}
+
+.movie-row::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Colore della scrollbar al passaggio del mouse */
+}
+
+.movie-item.compact {
+  padding: 5px; /* Spaziatura ridotta per la modalità compatta */
+  align-items: center;
+  height: auto;
+  padding-top: 5px;
+}
+
+.movie-list.vote-view .movie-item {
+  height: 450px;
+}
+
+.movie-left.compact{
+  grid-template-rows: 40px 140px 20px;
+  justify-content: center;
+}
+
+.movie-left.compact h2{
+  font-size: 60%;
+}
+
+.vote-buttons button{
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: lightgray; /* Colore di base quando non è selezionato */
+  color: black;
+}
+
+.vote-buttons button.selected {
+  background-color: green; /* Colore quando il pulsante è selezionato */
+  color: white; /* Testo bianco per il pulsante selezionato */
+}
+
+.vote-buttons button:hover {
+  opacity: 0.8; /* Effetto hover */
+}
+
+.movie-right::-webkit-scrollbar {
+  width: 7px; /* Larghezza della scrollbar */
+}
+
+.movie-right::-webkit-scrollbar-thumb {
+  background-color: rgb(52, 49, 49); /* Colore del thumb */
+  border-radius: 10px; /* Arrotondamento del thumb */
+}
+
+/*LOADING SPINNER*/
+/* LoadingSpinner.css */
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Altezza completa della viewport */
+  text-align: center;
+  color: #555;
+  
+}
+
+.loading-text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+
+
