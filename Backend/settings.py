@@ -1,0 +1,5 @@
+RATINGS_FILE_PATH = 'C:/Users/carlo/Desktop/TesiPy/server/ratings.csv'
+LINKS_FILE_PATH = 'C:/Users/carlo/Desktop/TesiPy/server/links.csv'
+MOVIE_FILE_PATH = 'C:/Users/carlo/Desktop/TesiPy/server/movies.csv'
+TAGS_FILE_PATH = 'C:/Users/carlo/Desktop/TesiPy/server/tags.csv'
+MOVIE_WITH_TAGS_FILE_PATH = 'C:/Users/carlo/Desktop/TesiPy/server/movies_with_tags.csv'
